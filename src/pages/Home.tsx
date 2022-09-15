@@ -1,15 +1,14 @@
-import styled from "styled-components"
+import styled from 'styled-components';
+import { LaserComponent } from '../components/laser/LaserComponent';
 
 export const Home = () => {
     return (
         <HomeContainer>
-            test
+            <LaserComponent pageIndex={0} />
         </HomeContainer>
-    )
-}
+    );
+};
 
 const HomeContainer = styled.div`
-    height: 100%;
-    background: ${({ theme }) => theme.color.text};
-    color: ${({ theme }) => theme.color.background};
-`
+    flex-grow: 1;
+`;

@@ -1,4 +1,5 @@
 {
+    "files.insertFinalNewline": true,
     "editor.formatOnSave": true,
-    "files.insertFinalNewline": true
+    "prettier.tabWidth": 4
 }

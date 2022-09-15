@@ -1,11 +1,12 @@
 import { FunctionComponent } from "react"
 import { Home } from "../pages/Home"
-import { Photography } from "../pages/Photography"
+import { Diurnal } from "../pages/Diurnal"
+import { Contact } from "../pages/Contact"
 
 export enum PageName {
     Home = 'Home',
-    Photography = 'Photography',
-    Test = 'Test',
+    Diurnal = 'Diurnal',
+    Contact = 'Contact',
 }
 
 export type PageType = {
@@ -17,25 +18,26 @@ export type PageType = {
 export const PAGES: Record<PageName, PageType> = {
     [PageName.Home]: {
         component: Home,
-        label: 'Acceuil',
+        label: 'Accueil',
         path: '/'
     },
-    [PageName.Photography]: {
-        component: Photography,
-        label: 'La photographie',
+    [PageName.Diurnal]: {
+        component: Diurnal,
+        label: 'Nycthémère',
         path: '/photography'
     },
-    [PageName.Test]: {
-        component: Photography,
-        label: 'Bonjour',
-        path: '/test'
-    }
+
+    [PageName.Contact]: {
+        component: Contact,
+        label: 'Contact',
+        path: '/contact'
+    },
 }
 
 export function getNavBarPages(): PageType[] {
     return [
         PAGES.Home,
-        PAGES.Photography,
-        PAGES.Test,
+        PAGES.Diurnal,
+        PAGES.Contact,
     ]
 }

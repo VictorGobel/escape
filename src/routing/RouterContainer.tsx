@@ -1,14 +1,14 @@
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom"
-import { NavBar } from "./NavBar"
-import { PAGES } from "./pages"
+import { Mailing } from "../pages/Mailing"
+import { SiteRouterContainer } from "./SiteRouterContainer"
 
 export const RouterContainer = () => {
 
     return (
         <Router>
-            <NavBar />
             <Switch>
-                {Object.values(PAGES).map(({ component, path }) => (<Route exact path={path} component={component}></Route>))}
+                <Route exact path="/mailing" component={Mailing} />
+                <Route path="/" component={SiteRouterContainer} />
             </Switch>
         </Router>
     )
