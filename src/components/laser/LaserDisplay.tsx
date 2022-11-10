@@ -21,6 +21,7 @@ export const LaserDisplay = ({
                     if (previous && previous.column > column) {
                         lasers.push(
                             <Laser
+                                key={`${column}-${row}-1`}
                                 color={laserColor}
                                 top={`${(row + 1) * 17.35 - 2.15}%`}
                                 left="5%"
@@ -32,6 +33,7 @@ export const LaserDisplay = ({
                     if (previous && previous.column < column) {
                         lasers.push(
                             <Laser
+                                key={`${column}-${row}-2`}
                                 color={laserColor}
                                 top={`${(row + 1) * 17.35 - 2.15}%`}
                                 left="0"
@@ -44,6 +46,7 @@ export const LaserDisplay = ({
                     if (next && next.column > column) {
                         lasers.push(
                             <Laser
+                                key={`${column}-${row}-3`}
                                 color={laserColor}
                                 top={`${(row + 1) * 17.35 - 2.15}%`}
                                 left="5%"
@@ -55,6 +58,7 @@ export const LaserDisplay = ({
                     if (next && next.column < column) {
                         lasers.push(
                             <Laser
+                                key={`${column}-${row}-4`}
                                 color={laserColor}
                                 top={`${(row + 1) * 17.35 - 2.15}%`}
                                 left="0"
@@ -66,6 +70,7 @@ export const LaserDisplay = ({
                     if (next && next.column === column) {
                         lasers.push(
                             <Laser
+                                key={`${column}-${row}-5`}
                                 color={laserColor}
                                 top={`${(Math.min(next.row, row) + 1) * 17.35 - 2.15}%`}
                                 left="4.95%"
@@ -80,6 +85,7 @@ export const LaserDisplay = ({
                     if (previous && previous.column > column) {
                         lasers.push(
                             <Laser
+                                key={`${column}-${row}-6`}
                                 color={laserColor}
                                 top={`${(row + 1) * 17.35 - 2.15}%`}
                                 left="95%"
@@ -91,6 +97,7 @@ export const LaserDisplay = ({
                     if (previous && previous.column < column) {
                         lasers.push(
                             <Laser
+                                key={`${column}-${row}-7`}
                                 color={laserColor}
                                 top={`${(row + 1) * 17.35 - 2.15}%`}
                                 left="90%"
@@ -103,6 +110,7 @@ export const LaserDisplay = ({
                     if (next && next.column > column) {
                         lasers.push(
                             <Laser
+                                key={`${column}-${row}-8`}
                                 color={laserColor}
                                 top={`${(row + 1) * 17.35 - 2.15}%`}
                                 left="95%"
@@ -114,6 +122,7 @@ export const LaserDisplay = ({
                     if (next && next.column < column) {
                         lasers.push(
                             <Laser
+                                key={`${column}-${row}-9`}
                                 color={laserColor}
                                 top={`${(row + 1) * 17.35 - 2.15}%`}
                                 left="90%"
@@ -126,6 +135,7 @@ export const LaserDisplay = ({
                     if (next && next.column === column) {
                         lasers.push(
                             <Laser
+                                key={`${column}-${row}-10`}
                                 color={laserColor}
                                 top={`${(Math.min(next.row, row) + 1) * 17.35 - 2.15}%`}
                                 left="94.95%"
