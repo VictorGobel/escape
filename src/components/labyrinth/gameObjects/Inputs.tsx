@@ -2,9 +2,14 @@ import { Direction, KeyboardKeyToDirection, KeybordKey } from '../constants';
 
 export class Inputs {
     public directionsPressed: Direction[] = [];
+    public isEnterPressed: boolean = false;
     public createdAt = new Date();
 
     addKeyInput(event: KeyboardEvent) {
+        if (event.key.toLowerCase() === 'enter') {
+            this.isEnterPressed = true;
+        }
+
         const associatedDirection: Direction | undefined =
             KeyboardKeyToDirection?.[event.key.toLowerCase() as KeybordKey];
         if (!associatedDirection) {
@@ -17,6 +22,10 @@ export class Inputs {
     }
 
     removeKeyInput(event: KeyboardEvent) {
+        if (event.key.toLowerCase() === 'enter') {
+            this.isEnterPressed = false;
+        }
+
         const associatedDirection: Direction | undefined =
             KeyboardKeyToDirection?.[event.key.toLowerCase() as KeybordKey];
 

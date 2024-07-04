@@ -9,6 +9,7 @@ import { Block } from './gameObjects/Block';
 import { NextPosition } from 'pages/Labyrinth';
 import { tpInfos } from './tpInfo';
 import { TP } from './gameObjects/TP';
+import { Text } from './gameObjects/Text';
 
 export const LabyrinthCanvas = ({
     mapIndex,
@@ -99,6 +100,14 @@ export const LabyrinthCanvas = ({
             tileHeight: canvasHeight / mapInfo.tilesHeight,
             tileWidth: canvasWidth / mapInfo.tilesWidth,
         });
+        const text = new Text({
+            canvasHeight,
+            canvasWidth,
+            tileHeight: canvasHeight / mapInfo.tilesHeight,
+            tileWidth: canvasWidth / mapInfo.tilesWidth,
+            context,
+            mapIndex,
+        });
 
         playerRef.current = player;
 
@@ -112,6 +121,7 @@ export const LabyrinthCanvas = ({
             }
             map.drawFloor(player.floor);
             tps.filter((tp) => tp.mapIndex === mapIndex).forEach((tp) => tp.draw());
+            text.draw(player, inputs);
             animationRef.current = requestAnimationFrame(() => animate({ canvas, context }));
         };
 
